@@ -97,7 +97,7 @@ jobs:
         platforms: linux/amd64,linux/arm64
         context: ${{ matrix.dir }}
         file: ${{ matrix.file }}
-        push: false
+        push: true
         load: true
         tags: ${{ env.TAGS }}
 
