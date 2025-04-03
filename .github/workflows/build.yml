@@ -133,9 +133,9 @@ jobs:
       uses: docker/build-push-action@v6
       if: ${{ env.MISSING_TAG == 'true' }}
       with:
+        platforms: linux/amd64,linux/arm64
         context: ${{ matrix.dir }}
         file: ${{ matrix.file }}
-        platforms: ${{ matrix.platforms }}
         push: true
         tags: ${{ env.TAGS }}
 
