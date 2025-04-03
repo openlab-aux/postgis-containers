@@ -90,13 +90,11 @@ jobs:
         else
           echo "MISSING_TAG=true" >> $GITHUB_ENV
         fi
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-
     - name: Build and load
       uses: docker/build-push-action@v6
       if: ${{ env.MISSING_TAG == 'true' }}
       with:
+        platforms: linux/amd64,linux/arm64
         context: ${{ matrix.dir }}
         file: ${{ matrix.file }}
         push: false
