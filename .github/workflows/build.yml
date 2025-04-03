@@ -11,6 +11,7 @@ on:
 env:
   IMAGE_STAGING: "ghcr.io/${{ github.repository_owner }}/postgis-testing"
   IMAGE_RELEASE: "ghcr.io/${{ github.repository_owner }}/postgis"
+  BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:
   generate-jobs:
